@@ -1,0 +1,75 @@
+// $font-stack: Helvetica, sans-serif;
+$green: #39cdcc;
+$bg-gray: #fbfbfb;
+$blue: #213f7d;
+$gray: #545f7d;
+$yellow: #e9b200;
+$red: #e4033b;
+$green-lg: #39cd62;
+$white: #ffffff;
+
+$bg-gray: rgba(84, 95, 125, 0.1);
+$bg-yellow: rgba(233, 178, 0, 0.1);
+$bg-red: rgba(228, 3, 59, 0.1);
+$bg-green-lg: rgba(57, 205, 98, 0.1);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $blue;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-md {
+  font-size: 1.125rem;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+}
+
+.text-100 {
+  font-weight: 100;
+}
+
+.text-200 {
+  font-weight: 200;
+}
+
+.text-300 {
+  font-weight: 300;
+}
+
+.text-400 {
+  font-weight: 400;
+}
+
+.text-500 {
+  font-weight: 500;
+}
+
+.text-600 {
+  font-weight: 600;
+}
+
+.text-700 {
+  font-weight: 700;
+}

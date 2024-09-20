@@ -1,0 +1,109 @@
+@use "base";
+
+// .dashboardContainer {
+// }
+
+.bottom {
+  display: flex;
+}
+
+.main {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  padding: 0 60px;
+}
+
+.mainContent {
+  display: grid;
+  row-gap: 40px;
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .userSummary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .summaryBox {
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 22%;
+      text-align: center;
+      border-radius: 8px;
+
+      p {
+        font-size: 14px;
+        color: #6c757d;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .userTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #213f7d0f;
+
+    thead {
+      tr {
+        th {
+          div {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            svg {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    th,
+    td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody {
+      .status {
+        padding: 7px 13px;
+        border-radius: 100px;
+      }
+
+      .active {
+        background-color: base.$bg-green-lg;
+        height: 30px;
+        color: base.$green-lg;
+      }
+
+      .inactive {
+        background-color: base.$bg-gray;
+        height: 30px;
+        color: base.$gray;
+      }
+
+      .pending {
+        background-color: base.$bg-yellow;
+        height: 30px;
+        color: base.$yellow;
+      }
+
+      .blacklisted {
+        background-color: base.$bg-red;
+        height: 30px;
+        color: base.$red;
+      }
+    }
+  }
+}
