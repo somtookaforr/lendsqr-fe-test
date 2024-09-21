@@ -1,8 +1,16 @@
+@use "../styles/base";
+
 .user_card {
   display: grid;
   width: 100%;
   column-gap: 30px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 20px;
+  }
 
   .container {
     padding: 20px 30px;
@@ -12,6 +20,11 @@
     border-width: 0px, 0px, 0px, 0px;
     border-style: solid;
     border-color: #213f7d0f;
+
+    @media screen and (max-width: 900px) {
+      height: auto;
+      width: auto;
+    }
 
     .text-sm {
       margin: 14px 0px 12px;
@@ -25,7 +38,24 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-color: red;
+      display: grid;
+      place-content: center;
+
+      &.pink {
+        background-color: base.$bg-pink;
+      }
+
+      &.purple {
+        background-color: base.$bg-purple;
+      }
+
+      &.orange {
+        background-color: base.$bg-orange;
+      }
+
+      &.red {
+        background-color: base.$bg-red;
+      }
     }
   }
 }

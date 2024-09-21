@@ -3,125 +3,151 @@ import "./sidebar.scss";
 import {
   FaUserFriends,
   FaClipboardList,
-  FaChartPie,
-  FaMoneyBill,
-  FaBuilding,
-  FaCog,
+  FaChevronDown,
+  FaBriefcase,
+  FaUsers,
+  FaRegHandshake,
+  FaPiggyBank,
+  FaUserCheck,
+  FaUserTimes,
+  FaCoins,
+  FaUserCog,
+  FaScroll,
+  FaChartBar,
+  FaSlidersH,
+  FaSignOutAlt,
 } from "react-icons/fa";
-import {
-  MdOutlineSavings,
-  MdOutlineReport,
-  MdOutlineSettings,
-} from "react-icons/md";
-import { FiLogOut } from "react-icons/fi";
-import { AiOutlineTransaction } from "react-icons/ai";
-import { HiOutlineDocumentReport } from "react-icons/hi";
-import { IoBusinessSharp, IoAnalytics } from "react-icons/io5";
-import { GiMoneyStack } from "react-icons/gi";
+import { RiDiscountPercentFill } from "react-icons/ri";
+import { GiCartwheel } from "react-icons/gi";
+import { ReactComponent as Loans } from "../assets/loans-icon.svg";
+import { ReactComponent as LoanRequests } from "../assets/loanrequests-icon.svg";
+import { ReactComponent as SavingsProducts } from "../assets/savings-icon.svg";
+import { ReactComponent as Transactions } from "../assets/transactions-icon.svg";
+import { ReactComponent as Services } from "../assets/services-icon.svg";
+import { NavLink } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="sidebar">
-      <nav>
-        <ul>
-          <li className="switch-organization">
-            <FaBuilding className="icon" />
-            Switch Organization
-          </li>
+    <>
+      <div className="sidebar">
+        <nav>
+          <ul>
+            <NavLink to={"#"} className="li switch-organization">
+              <FaBriefcase className="icon" />
+              <span>Switch Organization</span>
+              <FaChevronDown className="icon" size={14} />
+            </NavLink>
 
-          <li className="section-header">CUSTOMERS</li>
-          <li>
-            <FaUserFriends className="icon" />
-            Users
-          </li>
-          <li>
-            <FaClipboardList className="icon" />
-            Guarantors
-          </li>
-          <li>
-            <FaMoneyBill className="icon" />
-            Loans
-          </li>
-          <li>
-            <MdOutlineSavings className="icon" />
-            Savings
-          </li>
-          <li>
-            <IoAnalytics className="icon" />
-            Decision Models
-          </li>
-          <li>
-            <MdOutlineReport className="icon" />
-            Loan Requests
-          </li>
-          <li>
-            <AiOutlineTransaction className="icon" />
-            Whitelist
-          </li>
-          <li>
-            <HiOutlineDocumentReport className="icon" />
-            Karma
-          </li>
+            <NavLink to={"#"} className="li section-header">
+              CUSTOMERS
+            </NavLink>
+            <NavLink to={"/users"} className={"li"}>
+              <FaUserFriends className="icon" />
+              Users
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaUsers className="icon" />
+              Guarantors
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <Loans className="icon" />
+              Loans
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaRegHandshake className="icon" />
+              Decision Models
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaPiggyBank to={"#"} className="icon" />
+              Savings
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <LoanRequests className="icon" />
+              Loan Requests
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaUserCheck className="icon" />
+              Whitelist
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaUserTimes className="icon" />
+              Karma
+            </NavLink>
 
-          <li className="section-header">BUSINESSES</li>
-          <li>
-            <IoBusinessSharp className="icon" />
-            Organization
-          </li>
-          <li>
-            <FaChartPie className="icon" />
-            Loan Products
-          </li>
-          <li>
-            <GiMoneyStack className="icon" />
-            Savings Products
-          </li>
-          <li>
-            <FaMoneyBill className="icon" />
-            Fees and Charges
-          </li>
-          <li>
-            <AiOutlineTransaction className="icon" />
-            Transactions
-          </li>
-          <li>
-            <MdOutlineSettings className="icon" />
-            Services
-          </li>
-          <li>
-            <MdOutlineSettings className="icon" />
-            Service Account
-          </li>
-          <li>
-            <FaBuilding className="icon" />
-            Settlements
-          </li>
-          <li>
-            <HiOutlineDocumentReport className="icon" />
-            Reports
-          </li>
+            <NavLink to={"#"} className="li section-header">
+              BUSINESSES
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaBriefcase className="icon" />
+              Organization
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <LoanRequests className="icon" />
+              Loan Products
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <SavingsProducts className="icon" />
+              Savings Products
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaCoins className="icon" />
+              Fees and Charges
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <Transactions className="icon" />
+              Transactions
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <Services className="icon" />
+              Services
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaUserCog className="icon" />
+              Service Account
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaScroll className="icon" />
+              Settlements
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaChartBar className="icon" />
+              Reports
+            </NavLink>
 
-          <li className="section-header">SETTINGS</li>
-          <li>
-            <FaCog className="icon" />
-            Preferences
-          </li>
-          <li>
-            <FaMoneyBill className="icon" />
-            Fees and Pricing
-          </li>
-          <li>
-            <MdOutlineReport className="icon" />
-            Audit Logs
-          </li>
+            <NavLink to={"#"} className="li section-header">
+              SETTINGS
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaSlidersH className="icon" />
+              Preferences
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <RiDiscountPercentFill className="icon" />
+              Fees and Pricing
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <FaClipboardList className="icon" />
+              Audit Logs
+            </NavLink>
+            <NavLink to={"#"} className={"li"}>
+              <GiCartwheel className="icon" />
+              System Messages
+            </NavLink>
 
-          <li className="logout">
-            <FiLogOut className="icon" />
-            Log Out
-          </li>
-        </ul>
-      </nav>
-    </div>
+            <div className="end">
+              <NavLink to={"/"} className="li logout">
+                <FaSignOutAlt className="icon" />
+                Log Out
+              </NavLink>
+
+              <NavLink to={"#"} className={"li"}>
+                <span className="text-xs">v1.2.0</span>
+              </NavLink>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </>
   );
 };
 

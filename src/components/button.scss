@@ -1,0 +1,56 @@
+@use "../styles/base";
+
+.button {
+  height: 40px;
+  max-width: 170px;
+  width: 100%;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &.green {
+    // For outlined variant
+    &.outlined {
+      border: 1px solid base.$green;
+      color: base.$green;
+      background-color: transparent;
+    }
+
+    // For filled variant
+    &.filled {
+      background-color: base.$green;
+      color: base.$white;
+    }
+  }
+
+  &.red {
+    &.outlined {
+      border: 1px solid base.$red;
+      color: base.$red;
+      background-color: transparent;
+    }
+
+    &.filled {
+      background-color: base.$red;
+      color: base.$white;
+    }
+  }
+
+  &.gray {
+    &.outlined {
+      border: 1px solid base.$gray;
+      color: base.$gray;
+      background-color: transparent;
+    }
+
+    &.filled {
+      background-color: base.$gray;
+      color: base.$white;
+    }
+  }
+}

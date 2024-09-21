@@ -8,6 +8,10 @@ $red: #e4033b;
 $green-lg: #39cd62;
 $white: #ffffff;
 
+$bg-blue: rgba(33, 63, 125, 0.1);
+$bg-pink: rgba(223, 24, 255, 0.1);
+$bg-purple: rgba(87, 24, 255, 0.1);
+$bg-orange: rgba(245, 95, 68, 0.1);
 $bg-gray: rgba(84, 95, 125, 0.1);
 $bg-yellow: rgba(233, 178, 0, 0.1);
 $bg-red: rgba(228, 3, 59, 0.1);
@@ -40,6 +44,10 @@ h6 {
 
 .text-lg {
   font-size: 1.25rem;
+}
+
+.text-lgplus {
+  font-size: 1.375rem;
 }
 
 .text-xl {

@@ -1,0 +1,93 @@
+@use "../styles/base";
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #213f7d0f;
+
+  .rdt_TableCol_Sortable {
+    font-size: 12px;
+    font-weight: 600;
+    color: base.$gray;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .rdt_TableBody {
+    .rdt_TableRow {
+      padding: 20px 0;
+      color: base.$gray;
+
+      .rdt_TableCell {
+        .status {
+          padding: 0px 13px;
+          height: 30px;
+          border-radius: 100px;
+          display: grid;
+          align-items: center;
+        }
+
+        .active {
+          background-color: base.$bg-green-lg;
+          height: 30px;
+          color: base.$green-lg;
+        }
+
+        .inactive {
+          background-color: base.$bg-gray;
+          height: 30px;
+          color: base.$gray;
+        }
+
+        .pending {
+          background-color: base.$bg-yellow;
+          height: 30px;
+          color: base.$yellow;
+        }
+
+        .blacklisted {
+          background-color: base.$bg-red;
+          height: 30px;
+          color: base.$red;
+        }
+
+        .option-icon {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.rdt_Pagination {
+  justify-content: center !important;
+
+  span.kfEVfC {
+    font-size: 0;
+  }
+
+  span.kfEVfC::before {
+    content: "Showing";
+    font-size: 14px;
+  }
+
+  div.bpcekY {
+    background-color: base.$bg-blue;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: auto;
+  }
+
+  //   span.jEvKKB {
+  //     display: block;
+  //     margin-right: auto;
+  //     margin-left: 0;
+  //   }
+
+  //   span.jEvKKB::before {
+  //     content: "of 500";
+  //     font-size: 14px;
+  //   }
+}

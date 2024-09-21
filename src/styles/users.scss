@@ -1,22 +1,10 @@
 @use "base";
 
-// .dashboardContainer {
-// }
-
-.bottom {
-  display: flex;
-}
-
-.main {
-  margin-left: 250px;
-  padding: 20px;
-  width: calc(100% - 250px);
-  padding: 0 60px;
-}
-
 .mainContent {
   display: grid;
   row-gap: 40px;
+  height: calc(100% - 100px);
+  margin-top: 40px;
 
   h1 {
     font-size: 28px;
@@ -53,6 +41,7 @@
     border: 1px solid #213f7d0f;
 
     thead {
+      font-size: 12px;
       tr {
         th {
           div {
@@ -76,6 +65,13 @@
     }
 
     tbody {
+      font-size: 14px;
+      td {
+        &.options-icon {
+          cursor: pointer;
+        }
+      }
+
       .status {
         padding: 7px 13px;
         border-radius: 100px;
