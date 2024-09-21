@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d863225b.css",
+    "main.js": "/static/js/main.99016d40.js",
+    "static/js/453.997173f7.chunk.js": "/static/js/453.997173f7.chunk.js",
+    "static/media/login-image.svg": "/static/media/login-image.1adc3fcdbd8f07125bf1a83de82ae41a.svg",
+    "static/media/AvenirNextLTPro-Bold.otf": "/static/media/AvenirNextLTPro-Bold.711a4eb654bf1139f123.otf",
+    "static/media/AvenirNextLTPro-Demi.otf": "/static/media/AvenirNextLTPro-Demi.2a0cec709a4166a967dc.otf",
+    "static/media/AvenirNextLTPro-Regular.otf": "/static/media/AvenirNextLTPro-Regular.94f2f163d4b698242fef.otf",
+    "static/media/dashboard-savings-icon.svg": "/static/media/dashboard-savings-icon.69f34cbc354d9a61609f5913726b4c60.svg",
+    "static/media/dashboard-users-icon.svg": "/static/media/dashboard-users-icon.06dc87298197ef052ba892d6304338a1.svg",
+    "static/media/savings-icon.svg": "/static/media/savings-icon.b25185fc598e073eca895a7617b73010.svg",
+    "static/media/logo.svg": "/static/media/logo.7370afa69c4cab86ef17947d4753c806.svg",
+    "static/media/services-icon.svg": "/static/media/services-icon.8441cafed5d432c2d48547cb5e5b4759.svg",
+    "static/media/dashboard-active-icon.svg": "/static/media/dashboard-active-icon.3529d9eb0a0740eabd845cecb5cb9f96.svg",
+    "static/media/loanrequests-icon.svg": "/static/media/loanrequests-icon.8f2429469737c26683da8a5e531a7fd0.svg",
+    "static/media/loans-icon.svg": "/static/media/loans-icon.b4f2f77295dcb49f981d8e386f30d2f7.svg",
+    "static/media/dashboard-loan-icon.svg": "/static/media/dashboard-loan-icon.6a5ce421085b7ad876daa50362321cd9.svg",
+    "static/media/transactions-icon.svg": "/static/media/transactions-icon.c8d5acaa8740796e6620901051b43f3a.svg",
+    "index.html": "/index.html",
+    "main.d863225b.css.map": "/static/css/main.d863225b.css.map",
+    "main.99016d40.js.map": "/static/js/main.99016d40.js.map",
+    "453.997173f7.chunk.js.map": "/static/js/453.997173f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d863225b.css",
+    "static/js/main.99016d40.js"
+  ]
+}
