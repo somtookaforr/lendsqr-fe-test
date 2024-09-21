@@ -24,9 +24,11 @@ import { ReactComponent as LoanRequests } from "../assets/loanrequests-icon.svg"
 import { ReactComponent as SavingsProducts } from "../assets/savings-icon.svg";
 import { ReactComponent as Transactions } from "../assets/transactions-icon.svg";
 import { ReactComponent as Services } from "../assets/services-icon.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
+  const location = useLocation();
+
   return (
     <>
       <div className="sidebar">
@@ -42,7 +44,11 @@ const Sidebar: React.FC = () => {
 
             <NavLink
               to="/users"
-              className={({ isActive }) => (isActive ? "li active" : "li")}
+              className={({ isActive }) =>
+                location.pathname.startsWith("/users") || isActive
+                  ? "li active"
+                  : "li"
+              }
             >
               <FaUserFriends className="icon" />
               Users

@@ -13,7 +13,7 @@ function App() {
         <Route exact path='/' element={<Login />} />
         {/* Dashboard Routes */}
         <Route exact path='/users' element={<Users />} />
-        <Route exact path='/user_details' element={<UserDetails />} />
+        <Route exact path='/users/user_details' element={<UserDetails />} />
       </Routes>
     </Router>      
     </div>

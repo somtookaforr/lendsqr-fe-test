@@ -29,7 +29,7 @@ const OptionsPopup: React.FC<OptionsPopupProps> = ({
             className="option-item"
             onClick={() => {
               onViewDetails();
-              navigate("/user_details");
+              navigate("/users/user_details");
             }}
           >
             <span className="icon">
