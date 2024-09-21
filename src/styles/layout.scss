@@ -15,6 +15,7 @@
     width: calc(100% - 15.625rem);
     padding: 1.25rem 3.75rem;
     overflow-y: auto;
+    background-color: rgba(251, 251, 251, 0.06);
 
     @media screen and (max-width: 64rem) {
       margin-left: 0;
