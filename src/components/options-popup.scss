@@ -1,8 +1,10 @@
+@use "../styles/base";
+
 .options-overlay {
   position: fixed;
-  top: 500px;
+  top: 31.25rem;
   left: 0;
-  right: 60px;
+  right: 3.75rem;
   bottom: 0;
   background-color: transparent;
   display: flex;
@@ -10,32 +12,32 @@
   align-items: center;
   z-index: 1000;
 
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 100rem) {
     margin: 0 auto;
-    max-width: 1600px;
+    max-width: 100rem;
   }
 
   .options-dropdown {
     position: absolute;
-    background-color: white;
-    border: 1px solid #ddd;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background-color: base.$white;
+    border: 0.0625rem solid base.$bg-gray;
+    box-shadow: 0rem 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
     z-index: 1000;
-    padding: 10px;
+    padding: 0.625rem;
 
     .option-item {
-      padding: 10px;
+      padding: 0.625rem;
       display: flex;
       align-items: center;
       cursor: pointer;
 
       &:hover {
-        background-color: #f8f9fa;
+        background-color: base.$bg-gray;
       }
 
       .icon {
-        margin-right: 10px;
+        margin-right: 0.625rem;
       }
     }
   }

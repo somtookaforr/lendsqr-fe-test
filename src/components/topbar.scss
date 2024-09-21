@@ -1,15 +1,15 @@
-@use "./../styles/base";
+@use "../styles/base";
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 35px 30px;
-  box-shadow: 3px 0px 20px 0px #0000000a;
+  padding: 2.1875rem 1.875rem;
+  box-shadow: 0.1875rem 0rem 1.25rem 0rem #0000000a;
   position: fixed;
   top: 0;
   box-sizing: border-box;
-  height: 100px;
+  height: 6.25rem;
   width: 100%;
   z-index: 100;
   background-color: base.$white;
@@ -17,24 +17,26 @@
   .search-input {
     display: flex;
     align-items: center;
+
     .searchBar {
-      padding: 10px;
-      height: 40px;
-      width: 364px;
+      padding: 0.625rem;
+      height: 2.5rem;
+      width: 22.75rem;
       box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: 0.0625rem solid base.$bg-blue;
+      border-radius: 0.5rem;
     }
 
     .search-icon {
       background-color: base.$green;
-      height: 40px;
-      width: 56px;
+      height: 2.5rem;
+      width: 3.5rem;
       box-sizing: border-box;
-      padding: 13px 21px;
-      border-radius: 0 10px 10px 0;
+      padding: 0.8125rem 1.3125rem;
+      border-radius: 0 0.625rem 0.625rem 0;
       color: base.$white;
-      margin-left: -20px;
+      margin-left: -1.25rem;
+      cursor: pointer;
     }
   }
 
@@ -47,8 +49,8 @@
     }
 
     .bell-icon {
-      margin-right: 30px;
-      margin-left: 47px;
+      margin-right: 1.875rem;
+      margin-left: 2.9375rem;
       cursor: pointer;
     }
 
@@ -59,13 +61,33 @@
 
       img {
         border-radius: 50%;
-        width: 40px;
-        margin-right: 10px;
+        width: 2.5rem;
+        margin-right: 0.625rem;
       }
 
       .username {
-        margin: 0 10px;
+        margin: 0 0.625rem;
       }
+    }
+  }
+
+  @media (max-width: 48rem) {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+
+    .search-input {
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      .searchBar {
+        width: 90%;
+      }
+    }
+
+    .profileSection {
+      margin-top: 1.25rem;
     }
   }
 }

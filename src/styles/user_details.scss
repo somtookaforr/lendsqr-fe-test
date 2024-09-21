@@ -2,13 +2,13 @@
 
 .user-details-container {
   display: grid;
-  gap: 20px;
+  gap: 1.25rem;
 
   .navigation-section {
     .back-to-users {
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 0.8125rem;
       color: base.$gray;
       text-decoration: none;
     }
@@ -18,34 +18,40 @@
       align-items: center;
       justify-content: space-between;
 
+      @media screen and (max-width: 48rem) {
+        display: grid;
+      }
+
       .buttons {
         display: flex;
-        gap: 20px;
+        gap: 1.25rem;
       }
     }
   }
 
   .user-section {
     background: base.$white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    box-shadow: 0rem 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+    width: auto;
+    min-width: 12.5rem;
 
     .user-card {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
 
       .user-info {
         display: flex;
         align-items: center;
 
         .avatar {
-          width: 100px;
-          height: 100px;
+          width: 6.25rem;
+          height: 6.25rem;
           border-radius: 50%;
-          margin-right: 20px;
+          margin-right: 1.25rem;
           background-color: base.$bg-gray;
           display: grid;
           place-items: center;
@@ -57,9 +63,13 @@
 
         .details {
           display: grid;
-          gap: 30px;
+          gap: 1.875rem;
           align-items: center;
           grid-template-columns: repeat(3, 1fr);
+
+          @media screen and (max-width: 37.5rem) {
+            grid-template-columns: repeat(1, 1fr);
+          }
 
           p.text-500 {
             padding: 0;
@@ -67,9 +77,9 @@
           }
 
           .users-tier {
-            border-left: 1px solid base.$bg-blue;
-            border-right: 1px solid base.$bg-blue;
-            padding: 10px 30px;
+            border-left: 0.0625rem solid base.$bg-blue;
+            border-right: 0.0625rem solid base.$bg-blue;
+            padding: 0.625rem 1.875rem;
 
             .info-header {
               svg {
@@ -78,7 +88,7 @@
             }
           }
           h2 {
-            font-size: 20px;
+            font-size: 1.25rem;
             margin: 0;
           }
         }
@@ -86,8 +96,8 @@
 
       .actions {
         .btn {
-          padding: 10px 20px;
-          border-radius: 5px;
+          padding: 0.625rem 1.25rem;
+          border-radius: 0.3125rem;
           cursor: pointer;
           font-weight: bold;
           border: none;
@@ -100,32 +110,36 @@
           &.activate {
             background-color: #28a745;
             color: white;
-            margin-left: 10px;
+            margin-left: 0.625rem;
           }
         }
       }
     }
 
     .tabs {
-      margin-top: 20px;
+      margin-top: 1.25rem;
+      width: auto;
 
       ul {
         list-style: none;
         display: flex;
-        // gap: 20px;
-        // padding-left: 0;
         margin: 0;
-        padding: 0 20px;
+        padding: 0 1.25rem;
+        width: auto;
+
+        @media screen and (max-width: 37.5rem) {
+          overflow-x: scroll;
+        }
 
         li {
-          padding: 10px 20px;
+          padding: 0.625rem 1.25rem;
           cursor: pointer;
           width: 100%;
           display: grid;
           justify-items: center;
 
           &.active {
-            border-bottom: 2px solid base.$green;
+            border-bottom: 0.125rem solid base.$green;
             color: base.$green;
           }
         }
@@ -134,33 +148,33 @@
   }
 
   .details-section {
-    margin-top: 20px;
-    padding: 30px;
+    margin-top: 1.25rem;
+    padding: 1.875rem;
     background: base.$white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    box-shadow: 0rem 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
 
     hr {
-      margin: 30px 0;
-      border: 1px solid base.$blue;
+      margin: 1.875rem 0;
+      border: 0.0625rem solid base.$blue;
       opacity: 10%;
     }
 
     h3.text-500 {
-      margin-bottom: 30px;
+      margin-bottom: 1.875rem;
     }
 
     .info-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 30px;
-      margin-bottom: 20px;
+      gap: 1.875rem;
+      margin-bottom: 1.25rem;
 
       &.unique-info-grid {
         grid-template-columns: repeat(4, 1fr);
       }
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 64rem) {
         grid-template-columns: repeat(2, 1fr) !important;
       }
     }
@@ -170,11 +184,11 @@
   .education-employment,
   .socials,
   .guarantor {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 
     h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
+      margin-bottom: 0.625rem;
+      font-size: 1.125rem;
     }
   }
 }

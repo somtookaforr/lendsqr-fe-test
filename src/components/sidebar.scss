@@ -1,18 +1,18 @@
 @use "./../styles/base";
 
 .sidebar {
-  width: 283px;
+  width: 17.6875rem;
   box-sizing: border-box;
   background-color: base.$white;
-  padding-top: 140px;
+  padding-top: 8.75rem;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   font-family: Arial, sans-serif;
   overflow-y: auto;
-  box-shadow: 3px 0px 20px 0px #0000000a;
-  padding-bottom: 20px;
+  box-shadow: 0.1875rem 0rem 1.25rem 0rem #0000000a;
+  padding-bottom: 1.25rem;
   transition: transform 0.3s ease-in-out;
   z-index: 10;
 
@@ -21,14 +21,14 @@
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 10px;
+    gap: 0.625rem;
 
     .li {
       display: flex;
       align-items: center;
-      padding: 12px 20px;
+      padding: 0.75rem 1.25rem;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 400;
       color: base.$blue;
       opacity: 60%;
@@ -36,13 +36,15 @@
       transition: color 0.3s ease-in-out;
 
       .icon {
-        margin-right: 10px;
+        margin-right: 0.625rem;
         color: base.$blue;
       }
 
-      &:hover {
+      &:hover,
+      &.active {
         opacity: 100%;
         background-color: base.$bg-green-lg;
+        border-left: 4px solid base.$green;
       }
     }
 
@@ -50,8 +52,8 @@
       font-weight: bold;
       color: base.$gray;
       font-weight: 500;
-      font-size: 12px;
-      margin: 20px 0 10px;
+      font-size: 0.75rem;
+      margin: 1.25rem 0 0.625rem;
     }
 
     .switch-organization {
@@ -59,26 +61,26 @@
       opacity: 100%;
 
       span {
-        margin-right: 10px;
+        margin-right: 0.625rem;
       }
     }
 
     .end {
-      margin-top: 70px;
-      border-top: 1px solid base.$bg-blue;
+      margin-top: 4.375rem;
+      border-top: 0.0625rem solid base.$bg-blue;
 
       .li {
         opacity: 100%;
 
         &.logout {
-          padding-top: 20px;
+          padding-top: 1.25rem;
           &:hover {
             color: base.$red;
           }
         }
 
         span.text-xs {
-          margin-top: 20px;
+          margin-top: 1.25rem;
         }
       }
     }
@@ -97,20 +99,18 @@
   display: none;
 }
 
-// Hamburger Menu
 .hamburger {
   display: none;
   cursor: pointer;
-  font-size: 24px;
   position: fixed;
-  top: 10px;
-  left: 10px;
-  margin-top: 10px;
+  top: 1.5625rem;
+  left: 0.625rem;
+  margin-top: 0.625rem;
   z-index: 1500000;
 }
 
 // For smaller screens
-@media (max-width: 768px) {
+@media (max-width: 64rem) {
   .sidebar {
     transform: translateX(-100%); // Initially hide sidebar off screen
   }
@@ -125,5 +125,11 @@
 
   .overlay.active {
     display: block; // Show overlay when the sidebar is open
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .sidebar {
+    z-index: 200;
   }
 }

@@ -32,117 +32,124 @@ const Sidebar: React.FC = () => {
       <div className="sidebar">
         <nav>
           <ul>
-            <NavLink to={"#"} className="li switch-organization">
+            <li className="li switch-organization">
               <FaBriefcase className="icon" />
               <span>Switch Organization</span>
               <FaChevronDown className="icon" size={14} />
-            </NavLink>
+            </li>
 
-            <NavLink to={"#"} className="li section-header">
-              CUSTOMERS
-            </NavLink>
-            <NavLink to={"/users"} className={"li"}>
+            <li className="li section-header">CUSTOMERS</li>
+
+            <NavLink
+              to="/users"
+              className={({ isActive }) => (isActive ? "li active" : "li")}
+            >
               <FaUserFriends className="icon" />
               Users
             </NavLink>
-            <NavLink to={"#"} className={"li"}>
+
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaUsers className="icon" />
               Guarantors
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <Loans className="icon" />
               Loans
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaRegHandshake className="icon" />
               Decision Models
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
-              <FaPiggyBank to={"#"} className="icon" />
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
+              <FaPiggyBank className="icon" />
               Savings
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <LoanRequests className="icon" />
               Loan Requests
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaUserCheck className="icon" />
               Whitelist
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaUserTimes className="icon" />
               Karma
-            </NavLink>
+            </li>
 
-            <NavLink to={"#"} className="li section-header">
-              BUSINESSES
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            <li className="li section-header">BUSINESSES</li>
+
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaBriefcase className="icon" />
               Organization
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <LoanRequests className="icon" />
               Loan Products
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <SavingsProducts className="icon" />
               Savings Products
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaCoins className="icon" />
               Fees and Charges
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <Transactions className="icon" />
               Transactions
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <Services className="icon" />
               Services
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaUserCog className="icon" />
               Service Account
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaScroll className="icon" />
               Settlements
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaChartBar className="icon" />
               Reports
-            </NavLink>
+            </li>
 
-            <NavLink to={"#"} className="li section-header">
-              SETTINGS
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            <li className="li section-header">SETTINGS</li>
+
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaSlidersH className="icon" />
               Preferences
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <RiDiscountPercentFill className="icon" />
               Fees and Pricing
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <FaClipboardList className="icon" />
               Audit Logs
-            </NavLink>
-            <NavLink to={"#"} className={"li"}>
+            </li>
+            <li className="li" onClick={(e) => e.preventDefault()}>
               <GiCartwheel className="icon" />
               System Messages
-            </NavLink>
+            </li>
 
+            {/* Footer section */}
             <div className="end">
-              <NavLink to={"/"} className="li logout">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "li active logout" : "li logout"
+                }
+              >
                 <FaSignOutAlt className="icon" />
                 Log Out
               </NavLink>
 
-              <NavLink to={"#"} className={"li"}>
+              <li className="li">
                 <span className="text-xs">v1.2.0</span>
-              </NavLink>
+              </li>
             </div>
           </ul>
         </nav>

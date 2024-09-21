@@ -6,23 +6,28 @@
 
 .bottom {
   display: flex;
-  margin-top: 100px;
+  margin-top: 6.25rem;
   width: 100%;
 
   .main {
-    margin-left: 250px;
-    padding: 20px;
-    width: calc(100% - 250px);
-    padding: 20px 60px;
+    margin-left: 15.625rem;
+    padding: 1.25rem;
+    width: calc(100% - 15.625rem);
+    padding: 1.25rem 3.75rem;
     overflow-y: auto;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 64rem) {
       margin-left: 0;
+      margin-top: 5rem;
       width: 100%;
     }
 
-    @media screen and (max-width: 425px) {
-      padding: 10px;
+    @media screen and (max-width: 48rem) {
+      margin-top: 6.25rem;
+    }
+
+    @media screen and (max-width: 26.5625rem) {
+      padding: 0.625rem;
     }
   }
 }

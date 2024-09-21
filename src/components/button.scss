@@ -1,22 +1,22 @@
 @use "../styles/base";
 
 .button {
-  height: 40px;
-  max-width: 170px;
+  height: 2.5rem;
+  max-width: 10.625rem;
   width: 100%;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: grid;
   place-items: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
 
   &.green {
     // For outlined variant
     &.outlined {
-      border: 1px solid base.$green;
+      border: 0.0625rem solid base.$green;
       color: base.$green;
       background-color: transparent;
     }
@@ -30,7 +30,7 @@
 
   &.red {
     &.outlined {
-      border: 1px solid base.$red;
+      border: 0.0625rem solid base.$red;
       color: base.$red;
       background-color: transparent;
     }
@@ -43,7 +43,7 @@
 
   &.gray {
     &.outlined {
-      border: 1px solid base.$gray;
+      border: 0.0625rem solid base.$gray;
       color: base.$gray;
       background-color: transparent;
     }

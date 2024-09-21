@@ -3,31 +3,31 @@
 .user_card {
   display: grid;
   width: 100%;
-  column-gap: 30px;
+  column-gap: 1.875rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 64rem) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 20px;
-    row-gap: 20px;
+    column-gap: 1.25rem;
+    row-gap: 1.25rem;
   }
 
   .container {
-    padding: 20px 30px;
+    padding: 1.25rem 1.875rem;
     box-sizing: border-box;
-    width: 240px;
-    height: 160px;
-    border-width: 0px, 0px, 0px, 0px;
+    width: 15rem;
+    height: 10rem;
+    border-width: 0rem, 0rem, 0rem, 0rem;
     border-style: solid;
     border-color: #213f7d0f;
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 56.25rem) {
       height: auto;
       width: auto;
     }
 
     .text-sm {
-      margin: 14px 0px 12px;
+      margin: 0.875rem 0rem 0.75rem;
     }
 
     p {
@@ -35,8 +35,8 @@
     }
 
     .icon {
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
       border-radius: 50%;
       display: grid;
       place-content: center;

@@ -3,53 +3,53 @@
 .userTable {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  border: 1px solid #213f7d0f;
+  margin-top: 1.25rem;
+  border: 0.0625rem solid #213f7d0f;
 
   .rdt_TableCol_Sortable {
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 600;
     color: base.$gray;
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     align-items: center;
   }
 
   .rdt_TableBody {
     .rdt_TableRow {
-      padding: 20px 0;
+      padding: 1.25rem 0;
       color: base.$gray;
 
       .rdt_TableCell {
         .status {
-          padding: 0px 13px;
-          height: 30px;
-          border-radius: 100px;
+          padding: 0rem 0.8125rem;
+          height: 1.875rem;
+          border-radius: 6.25rem;
           display: grid;
           align-items: center;
         }
 
         .active {
           background-color: base.$bg-green-lg;
-          height: 30px;
+          height: 1.875rem;
           color: base.$green-lg;
         }
 
         .inactive {
           background-color: base.$bg-gray;
-          height: 30px;
+          height: 1.875rem;
           color: base.$gray;
         }
 
         .pending {
           background-color: base.$bg-yellow;
-          height: 30px;
+          height: 1.875rem;
           color: base.$yellow;
         }
 
         .blacklisted {
           background-color: base.$bg-red;
-          height: 30px;
+          height: 1.875rem;
           color: base.$red;
         }
 
@@ -70,13 +70,13 @@
 
   span.kfEVfC::before {
     content: "Showing";
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   div.bpcekY {
     background-color: base.$bg-blue;
-    border-radius: 4px;
-    margin-left: 10px;
+    border-radius: 0.25rem;
+    margin-left: 0.625rem;
     margin-right: auto;
   }
 
@@ -88,6 +88,6 @@
 
   //   span.jEvKKB::before {
   //     content: "of 500";
-  //     font-size: 14px;
+  //     font-size: .875rem;
   //   }
 }

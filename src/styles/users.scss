@@ -2,51 +2,34 @@
 
 .mainContent {
   display: grid;
-  row-gap: 40px;
-  height: calc(100% - 100px);
-  margin-top: 40px;
+  row-gap: 2.5rem;
+  height: calc(100% - 6.25rem);
+  margin-top: 2.5rem;
 
   h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
   }
 
   .userSummary {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
-
-    .summaryBox {
-      background-color: #f8f9fa;
-      padding: 20px;
-      width: 22%;
-      text-align: center;
-      border-radius: 8px;
-
-      p {
-        font-size: 14px;
-        color: #6c757d;
-      }
-
-      h2 {
-        font-size: 24px;
-      }
-    }
+    margin-bottom: 1.25rem;
   }
 
   .userTable {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    border: 1px solid #213f7d0f;
+    margin-top: 1.25rem;
+    border: 0.0625rem solid #213f7d0f;
 
     thead {
-      font-size: 12px;
+      font-size: 0.75rem;
       tr {
         th {
           div {
             display: flex;
-            gap: 10px;
+            gap: 0.625rem;
             align-items: center;
 
             svg {
@@ -59,13 +42,13 @@
 
     th,
     td {
-      padding: 16px;
+      padding: 1rem;
       text-align: left;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 0.0625rem solid #ddd;
     }
 
     tbody {
-      font-size: 14px;
+      font-size: 0.875rem;
       td {
         &.options-icon {
           cursor: pointer;
@@ -73,31 +56,31 @@
       }
 
       .status {
-        padding: 7px 13px;
-        border-radius: 100px;
+        padding: 0.4375rem 0.8125rem;
+        border-radius: 6.25rem;
       }
 
       .active {
         background-color: base.$bg-green-lg;
-        height: 30px;
+        height: 1.875rem;
         color: base.$green-lg;
       }
 
       .inactive {
         background-color: base.$bg-gray;
-        height: 30px;
+        height: 1.875rem;
         color: base.$gray;
       }
 
       .pending {
         background-color: base.$bg-yellow;
-        height: 30px;
+        height: 1.875rem;
         color: base.$yellow;
       }
 
       .blacklisted {
         background-color: base.$bg-red;
-        height: 30px;
+        height: 1.875rem;
         color: base.$red;
       }
     }

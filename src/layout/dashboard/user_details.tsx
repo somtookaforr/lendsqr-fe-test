@@ -9,8 +9,11 @@ import { IoIosStarOutline, IoIosStar } from "react-icons/io";
 
 const UserDetails: React.FC = () => {
   const [activeTab, setActiveTab] = useState("general");
-
   const handleTabClick = (tab: any) => setActiveTab(tab);
+
+  const activeUser = localStorage.getItem("selectedUser")
+    ? JSON.parse(localStorage.getItem("selectedUser")!)
+    : null;
 
   return (
     <Layout>
@@ -46,7 +49,9 @@ const UserDetails: React.FC = () => {
                 </div>
                 <div className="details">
                   <div className="">
-                    <p className="text-500 text-lgplus">Grace Effiom</p>
+                    <p className="text-500 text-lgplus">
+                      {activeUser.username}
+                    </p>
                     <p className="text-sm">LSQFf587g90</p>
                   </div>
                   <div className="users-tier">
@@ -115,23 +120,23 @@ const UserDetails: React.FC = () => {
                   <span className="info-header text-400 text-xs">
                     Full Name
                   </span>{" "}
-                  <br /> Grace Effiom
+                  <br /> {activeUser.username}
                 </div>
                 <div>
                   <span className="info-header text-400 text-xs">
                     Phone Number
                   </span>{" "}
-                  <br /> 07060780922
+                  <br /> {activeUser.phoneNumber}
                 </div>
                 <div>
                   <span className="info-header text-400 text-xs">
                     Email Address
                   </span>{" "}
-                  <br /> grace@gmail.com
+                  <br /> {activeUser.email}
                 </div>
                 <div>
                   <span className="info-header text-400 text-xs">BVN</span>{" "}
-                  <br /> 07060780922
+                  <br /> 10991956782
                 </div>
                 <div>
                   <span className="info-header text-400 text-xs">
@@ -185,7 +190,9 @@ const UserDetails: React.FC = () => {
                   <span className="info-header text-400 text-xs">
                     Office Email
                   </span>{" "}
-                  <br /> grace@lendsqr.com
+                  <br />{" "}
+                  {activeUser?.username?.toLowerCase().replace(/\s+/g, "")}
+                  @lendsqr.com
                 </div>
                 <div>
                   <span className="info-header text-400 text-xs">
@@ -209,17 +216,19 @@ const UserDetails: React.FC = () => {
               <div className="info-grid">
                 <div>
                   <span className="info-header text-400 text-xs">Twitter</span>{" "}
-                  <br /> @grace_effiom
+                  <br /> @
+                  {activeUser?.username?.toLowerCase().replace(/\s+/g, "")}
                 </div>
                 <div>
                   <span className="info-header text-400 text-xs">Facebook</span>{" "}
-                  <br /> Grace Effiom
+                  <br /> {activeUser.username}
                 </div>
                 <div>
                   <span className="info-header text-400 text-xs">
                     Instagram
                   </span>{" "}
-                  <br /> @grace_effiom
+                  <br /> @
+                  {activeUser?.username?.toLowerCase().replace(/\s+/g, "")}
                 </div>
               </div>
             </div>

@@ -6,6 +6,7 @@ import { IoFilter } from "react-icons/io5";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import moment from "moment";
 import OptionsPopup from "./options-popup";
+import FilterPopup from "./filter-popup";
 import "./table.scss";
 
 const sortIcon = <IoFilter fontSize={16} />;
@@ -28,10 +29,23 @@ interface User {
 export const UsersTable: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [showOptionsModal, setShowOptionsModal] = useState(false);
+  const [showFilterModal, setShowFilterModal] = useState(false);
   const [activeUser, setActiveUser] = useState(null);
   const toggleOptionsModal = (user) => {
     setActiveUser(user);
     setShowOptionsModal(!showOptionsModal);
+    setShowFilterModal(false);
+  };
+
+  const toggleFilterModal = () => {
+    setShowFilterModal(true); // Open the filter modal
+    setShowOptionsModal(false); // Close the options modal
+  };
+
+  const viewUserDetails = () => {
+    if (activeUser) {
+      localStorage.setItem("selectedUser", JSON.stringify(activeUser));
+    }
   };
 
   useEffect(() => {
@@ -47,7 +61,7 @@ export const UsersTable: React.FC = () => {
     if (targetElement) {
       targetElement.insertAdjacentElement("afterend", newSpan);
     }
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+  }, []);
 
   useEffect(() => {
     axios
@@ -60,7 +74,7 @@ export const UsersTable: React.FC = () => {
         const usersData = repeatedData.map((user: any, index: number) => ({
           id: index + 1,
           organization: "Lendsqr",
-          username: user.username,
+          username: user.name,
           email: user.email,
           phoneNumber: user.phone,
           dateJoined: moment().format("MMMM DD, YYYY h:mm A"),
@@ -113,9 +127,9 @@ export const UsersTable: React.FC = () => {
       selector: (row: User) => row.status,
       sortable: true,
       width: "50px",
-      cell: () => (
+      cell: (row: User) => (
         <BsThreeDotsVertical
-          onClick={toggleOptionsModal}
+          onClick={() => toggleOptionsModal(row)}
           className="option-icon"
         />
       ),
@@ -137,6 +151,12 @@ export const UsersTable: React.FC = () => {
       <OptionsPopup
         show={showOptionsModal}
         onClose={() => setShowOptionsModal(false)}
+        openFilterModal={toggleFilterModal}
+        onViewDetails={viewUserDetails}
+      />
+      <FilterPopup
+        show={showFilterModal}
+        onClose={() => setShowFilterModal(false)}
       />
     </>
   );

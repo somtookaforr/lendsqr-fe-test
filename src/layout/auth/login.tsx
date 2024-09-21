@@ -23,7 +23,7 @@ const Login: React.FC = () => {
 
       <div className={"rightSide"}>
         <h1>Welcome!</h1>
-        <p>Enter details to login.</p>
+        <p className="text-lg">Enter details to login.</p>
 
         <form action="" onSubmit={() => navigate("/users")}>
           <div className={"inputGroup"}>
@@ -39,17 +39,20 @@ const Login: React.FC = () => {
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className={"showPasswordButton"}
+              className={"showPasswordButton text-xs text-600"}
             >
               {showPassword ? "HIDE" : "SHOW"}
             </button>
           </div>
 
-          <a href="/forgot-password" className={"forgotPassword"}>
+          <a
+            href="/forgot-password"
+            className={"forgotPassword text-xs text-600"}
+          >
             FORGOT PASSWORD?
           </a>
 
-          <button className={"loginButton"} type="submit">
+          <button className={"loginButton text-600"} type="submit">
             LOG IN
           </button>
         </form>
