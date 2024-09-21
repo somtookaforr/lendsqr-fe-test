@@ -4,6 +4,7 @@ import Logo from "../assets/logo.svg";
 import Avatar from "../assets/avatar.png";
 import { FaRegBell, FaSortDown } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Topbar: React.FC = () => {
   return (
@@ -20,7 +21,7 @@ const Topbar: React.FC = () => {
         <IoSearchOutline className="search-icon" />
       </div>
       <div className={"profileSection"}>
-        <a href="/docs">Docs</a>
+        <Link to="#">Docs</Link>
         <FaRegBell className="bell-icon" />
         <div className={"profile"}>
           <img src={Avatar} alt="User" />

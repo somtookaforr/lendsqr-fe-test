@@ -1,6 +1,7 @@
 import React from "react";
 import "./filter-popup.scss";
 import Button from "./button";
+import { IoClose } from "react-icons/io5";
 
 interface FilterPopupProps {
   show: boolean;
@@ -13,7 +14,11 @@ const FilterPopup: React.FC<FilterPopupProps> = ({ show, onClose }) => {
   return (
     <div className="popup-overlay" onClick={onClose}>
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-        <h3>Filter Users</h3>
+        <div className="close-header">
+          <h3>Filter Users</h3>
+          <IoClose onClick={onClose} size={20} />
+        </div>
+
         <form>
           <label>
             Organization

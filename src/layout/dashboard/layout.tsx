@@ -6,14 +6,13 @@ import "../../styles/layout.scss";
 
 const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   useEffect(() => {
-    const handleDOMContentLoaded = () => {
+    const attachListeners = () => {
       const sidebar = document.querySelector(".sidebar") as HTMLElement | null;
       const hamburger = document.querySelector(
         ".hamburger"
       ) as HTMLElement | null;
       const overlay = document.querySelector(".overlay") as HTMLElement | null;
 
-      // Ensure elements exist before adding event listeners
       if (hamburger && sidebar && overlay) {
         hamburger.addEventListener("click", () => {
           console.log("Hamburger clicked");
@@ -33,12 +32,28 @@ const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
       }
     };
 
-    // Wait for full DOM content to be loaded
-    window.addEventListener("load", handleDOMContentLoaded);
+    // Delay execution slightly to ensure DOM is ready
+    const timeoutId = setTimeout(attachListeners, 100);
 
-    // Cleanup event listener on unmount
+    // Cleanup event listeners on component unmount
     return () => {
-      window.removeEventListener("load", handleDOMContentLoaded);
+      const sidebar = document.querySelector(".sidebar") as HTMLElement | null;
+      const hamburger = document.querySelector(
+        ".hamburger"
+      ) as HTMLElement | null;
+      const overlay = document.querySelector(".overlay") as HTMLElement | null;
+
+      hamburger?.removeEventListener("click", () => {
+        sidebar?.classList.toggle("open");
+        overlay?.classList.toggle("active");
+      });
+
+      overlay?.removeEventListener("click", () => {
+        sidebar?.classList.remove("open");
+        overlay?.classList.remove("active");
+      });
+
+      clearTimeout(timeoutId); // Clear timeout when unmounting
     };
   }, []);
 
