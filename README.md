@@ -20,7 +20,6 @@ This project is a front-end application built using React, designed to replicate
 - **React Data Table Component** (`^7.6.2`): For creating dynamic, sortable, and paginated tables.
 - **Moment.js** (`^2.30.1`): For date formatting and manipulation.
 - **Node-sass** (`^9.0.0`) & **Sass** (`^1.79.0`): For writing maintainable and structured CSS using SCSS.
-- **Styled Components** (`^6.1.13`): For styling React components with scoped CSS.
 - **React Icons** (`^5.3.0`): To use vector icons across the application.
 
 ## Features
