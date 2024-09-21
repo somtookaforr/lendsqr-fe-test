@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# Admin Dashboard
+This project is a front-end application built using React, designed to replicate a part of the Lendsqr Admin Console. It includes user management features, dynamic data tables, and a responsive sidebar navigation. The app allows users to interact with mock APIs to view and manage user details. The project is built with a modern JavaScript stack and is fully responsive.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Mock APIs](#mock-apis)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- **React** (`^18.3.1`): The core framework for building the front-end UI.
+- **Axios** (`^1.7.7`): For making HTTP requests to mock APIs.
+- **React Router Dom** (`^6.26.2`): For handling navigation between different pages.
+- **React Data Table Component** (`^7.6.2`): For creating dynamic, sortable, and paginated tables.
+- **Moment.js** (`^2.30.1`): For date formatting and manipulation.
+- **Node-sass** (`^9.0.0`) & **Sass** (`^1.79.0`): For writing maintainable and structured CSS using SCSS.
+- **Styled Components** (`^6.1.13`): For styling React components with scoped CSS.
+- **React Icons** (`^5.3.0`): To use vector icons across the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Dynamic User Table**: 
+  - Fetch user data from mock APIs and display it in a dynamic, paginated table.
+  - Sorting and filtering functionality included.
+  
+- **User Detail View**: 
+  - Click on a user to view detailed information on a separate page.
+  - User information is persisted in local storage for easy access on reload.
 
-### `npm test`
+- **Responsive Sidebar**: 
+  - A collapsible sidebar with links to different sections of the application.
+  - Sidebar dynamically highlights the active page and handles hover/active state transitions.
+  
+- **Date Management**: 
+  - User-friendly display of dates using Moment.js for formatting.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/en/) (v14+)
+- npm or [yarn](https://yarnpkg.com/) package manager
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/yourprojectname.git
+   cd yourprojectname
+   ```
 
-### `npm run eject`
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   The application should now be running at `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Once the project is running, you can access the following features:
+- **Login Page**: Authentication page to login.
+- **Users Page**: Displays a paginated table of users fetched from mock APIs.
+- **User Details**: Click on any user in the table to view detailed information about that user.
+- **Sidebar Navigation**: Use the sidebar to navigate between different sections (though some sections are static).
 
-## Learn More
+### Mock APIs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The project uses JSONplaceholder APIs 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+**Example API structure for users:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "avatar": "https://example.com/avatar1.jpg",
+    "phone": "123-456-7890",
+    "status": "Active",
+    "joined": "2024-01-01"
+  },
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "email": "janedoe@example.com",
+    "avatar": "https://example.com/avatar2.jpg",
+    "phone": "123-456-7891",
+    "status": "Inactive",
+    "joined": "2023-12-01"
+  }
+]
+```
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Here's a quick overview of the project folder structure:
 
-### Making a Progressive Web App
+```bash
+src/
+│
+├── assets/                 # Static assets (images, logos, etc.)
+├── components/             # Reusable UI components (e.g., UserCard, Sidebar, etc.)
+├── pages/                  # Main pages (Users, UserDetail)
+├── styles/                 # Global and component-specific styles (Sass, CSS, etc.)
+├── utils/                  # Utility functions (e.g., formatters, constants)
+├── App.tsx                 # Main application component
+├── index.tsx               # Entry point of the application
+└── custom.d.ts             # TypeScript declaration file for handling asset imports
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
 
-### Advanced Configuration
+If you'd like to contribute to this project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m "Add new feature"`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
