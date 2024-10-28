@@ -8,11 +8,6 @@
   display: flex;
   margin-top: 6.25rem;
   width: 100%;
-  overflow-y: scroll;
-
-  @media screen and (min-width: 1280px) {
-    height: 100vh;
-  }
 
   .main {
     margin-left: 17.6875rem;
