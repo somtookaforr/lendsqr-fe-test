@@ -56,7 +56,7 @@ const UserDetails: React.FC = () => {
                   </div>
                   <div className="users-tier">
                     <p className="text-sm text-500">User's Tier:</p>
-                    <p className="info-header text-400 text-xs">
+                    <p className="text-xs info-header text-400">
                       <IoIosStar size={16} />
                       <IoIosStarOutline size={16} />
                       <IoIosStarOutline size={16} />
@@ -64,7 +64,7 @@ const UserDetails: React.FC = () => {
                   </div>
                   <div className="">
                     <p className="text-500 text-lgplus">₦200,000.00</p>
-                    <p className="text-xs">9932345678/Providus Bank</p>
+                    <p className="text-xs account">9932345678/Providus Bank</p>
                   </div>
                 </div>
               </div>
@@ -117,42 +117,42 @@ const UserDetails: React.FC = () => {
               <h3 className="text-500">Personal Information</h3>
               <div className="info-grid">
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Full Name
                   </span>{" "}
-                  <br /> {activeUser.username}
+                  <p>{activeUser.username}</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Phone Number
                   </span>{" "}
-                  <br /> {activeUser.phoneNumber}
+                  <p>{activeUser.phoneNumber}</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Email Address
                   </span>{" "}
-                  <br /> {activeUser.email}
+                  <p>{activeUser.email}</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">BVN</span>{" "}
-                  <br /> 10991956782
+                  <span className="text-xs info-header text-400">BVN</span>{" "}
+                  <p>10991956782</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Marital Status
                   </span>{" "}
-                  <br /> Single
+                  <p>Single</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">Children</span>{" "}
-                  <br /> None
+                  <span className="text-xs info-header text-400">Children</span>{" "}
+                  <p>None</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Type of Residence
                   </span>{" "}
-                  <br /> Parent's Apartment
+                  <p>Parent's Apartment</p>
                 </div>
               </div>
             </div>
@@ -163,48 +163,47 @@ const UserDetails: React.FC = () => {
               <h3 className="text-500">Education and Employment</h3>
               <div className="info-grid unique-info-grid">
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Level of Education
                   </span>{" "}
-                  <br /> B.Sc
+                  <p>B.Sc</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Employment Status
                   </span>{" "}
-                  <br /> Employed
+                  <p>Employed</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Sector of Employment
                   </span>{" "}
-                  <br /> FinTech
+                  <p>FinTech</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Duration of Employment
                   </span>{" "}
-                  <br /> 2 years
+                  <p>2 years</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Office Email
                   </span>{" "}
-                  <br />{" "}
-                  {activeUser?.username?.toLowerCase().replace(/\s+/g, "")}
-                  @lendsqr.com
+                  <p>{activeUser?.username?.toLowerCase().replace(/\s+/g, "")}
+                  @lendsqr.com</p>{" "}  
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Monthly Income
                   </span>{" "}
-                  <br /> ₦200,000.00 - ₦400,000.00
+                  <p>₦200,000.00 - ₦400,000.00</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Loan Repayment
                   </span>{" "}
-                  <br /> 40,000
+                  <p>40,000</p>
                 </div>
               </div>
             </div>
@@ -215,20 +214,18 @@ const UserDetails: React.FC = () => {
               <h3 className="text-500">Socials</h3>
               <div className="info-grid">
                 <div>
-                  <span className="info-header text-400 text-xs">Twitter</span>{" "}
-                  <br /> @
-                  {activeUser?.username?.toLowerCase().replace(/\s+/g, "")}
+                  <span className="text-xs info-header text-400">Twitter</span>{" "}
+                  <p>@{activeUser?.username?.toLowerCase().replace(/\s+/g, "")}</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">Facebook</span>{" "}
-                  <br /> {activeUser.username}
+                  <span className="text-xs info-header text-400">Facebook</span>{" "}
+                  <p>{activeUser.username}</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Instagram
                   </span>{" "}
-                  <br /> @
-                  {activeUser?.username?.toLowerCase().replace(/\s+/g, "")}
+                  <p>@{activeUser?.username?.toLowerCase().replace(/\s+/g, "")}</p>
                 </div>
               </div>
             </div>
@@ -239,28 +236,28 @@ const UserDetails: React.FC = () => {
               <h3 className="text-500">Guarantor</h3>
               <div className="info-grid">
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Full Name
                   </span>{" "}
-                  <br /> Debby Ogana
+                  <p>Debby Ogana</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Phone Number
                   </span>{" "}
-                  <br /> 07060780922
+                  <p>07060780922</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Email Address
                   </span>{" "}
-                  <br /> debby@gmail.com
+                  <p>debby@gmail.com</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Relationship
                   </span>{" "}
-                  <br /> Sister
+                  <p>Sister</p>
                 </div>
               </div>
             </div>
@@ -273,28 +270,28 @@ const UserDetails: React.FC = () => {
               </h3>
               <div className="info-grid">
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Full Name
                   </span>{" "}
-                  <br /> Debby Ogana
+                  <p>Debby Ogana</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Phone Number
                   </span>{" "}
-                  <br /> 07060780922
+                  <p>07060780922</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Email Address
                   </span>{" "}
-                  <br /> debby@gmail.com
+                  <p>debby@gmail.com</p>
                 </div>
                 <div>
-                  <span className="info-header text-400 text-xs">
+                  <span className="text-xs info-header text-400">
                     Relationship
                   </span>{" "}
-                  <br /> Sister
+                  <p>Sister</p>
                 </div>
               </div>
             </div>

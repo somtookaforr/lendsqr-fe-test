@@ -2,8 +2,6 @@
 
 .topbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 2.1875rem 1.875rem;
   box-shadow: 0.1875rem 0rem 1.25rem 0rem #0000000a;
   position: fixed;
@@ -14,66 +12,10 @@
   z-index: 100;
   background-color: base.$white;
 
-  .search-input {
-    display: flex;
-    align-items: center;
-
-    .searchBar {
-      padding: 0.625rem;
-      height: 2.5rem;
-      width: 22.75rem;
-      box-sizing: border-box;
-      border: 0.0625rem solid base.$bg-blue;
-      border-radius: 0.5rem;
-    }
-
-    .search-icon {
-      background-color: base.$green;
-      height: 2.5rem;
-      width: 3.5rem;
-      box-sizing: border-box;
-      padding: 0.8125rem 1.3125rem;
-      border-radius: 0 0.625rem 0.625rem 0;
-      color: base.$white;
-      margin-left: -1.25rem;
-      cursor: pointer;
-    }
-  }
-
-  .profileSection {
-    display: flex;
-    align-items: center;
-
-    a {
-      color: base.$blue;
-    }
-
-    .bell-icon {
-      margin-right: 1.875rem;
-      margin-left: 2.9375rem;
-      cursor: pointer;
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-
-      img {
-        border-radius: 50%;
-        width: 2.5rem;
-        margin-right: 0.625rem;
-      }
-
-      .username {
-        margin: 0 0.625rem;
-      }
-    }
-  }
-
-  @media (max-width: 48rem) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: auto;
 
     .search-input {
@@ -88,6 +30,84 @@
 
     .profileSection {
       margin-top: 1.25rem;
+    }
+  }
+
+  .topbar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @media screen and (min-width: 1025px) {
+      margin-left: 130px;
+      flex-direction: row;
+      display: flex;
+      padding-right: 3.75rem;
+    }
+
+    .search-input {
+      display: flex;
+      align-items: center;
+  
+      .searchBar {
+        padding: 0.625rem;
+        height: 2.5rem;
+        width: 22.75rem;
+        box-sizing: border-box;
+        border: 0.0625rem solid base.$bg-blue;
+        border-radius: 0.5rem;
+      }
+  
+      .search-icon {
+        background-color: base.$green;
+        height: 2.5rem;
+        width: 3.5rem;
+        box-sizing: border-box;
+        padding: 0.8125rem 1.3125rem;
+        border-radius: 0 0.625rem 0.625rem 0;
+        color: base.$white;
+        margin-left: -1.25rem;
+        cursor: pointer;
+      }
+    }
+  
+    .profileSection {
+      display: flex;
+      align-items: center;
+  
+      a {
+        color: base.$blue;
+      }
+  
+      .bell-icon {
+        margin-right: 1.875rem;
+        margin-left: 2.9375rem;
+        cursor: pointer;
+      }
+  
+      .profile {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+  
+        img {
+          border-radius: 50%;
+          width: 2.5rem;
+          margin-right: 0.625rem;
+        }
+  
+        .username {
+          margin: 0 0.625rem;
+          color: base.$blue;
+          font-weight: 500;
+        }
+
+        svg{
+          margin-top: -0.25rem;
+        }
+      }
     }
   }
 }

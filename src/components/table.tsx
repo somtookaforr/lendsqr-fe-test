@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import DataTable from "react-data-table-component";
 import { BiCheckSquare } from "react-icons/bi";
@@ -11,7 +11,7 @@ import "./table.scss";
 
 const sortIcon = <IoFilter fontSize={16} />;
 const selectProps = {
-  indeterminate: (isIndeterminate) => isIndeterminate,
+  indeterminate: (isIndeterminate: boolean) => isIndeterminate,
 };
 
 const statusOptions = ["Active", "Inactive", "Pending", "Blacklisted"];
@@ -28,10 +28,22 @@ interface User {
 
 export const UsersTable: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
-  const [showOptionsModal, setShowOptionsModal] = useState(false);
-  const [showFilterModal, setShowFilterModal] = useState(false);
-  const [activeUser, setActiveUser] = useState(null);
-  const toggleOptionsModal = (user) => {
+  const [showOptionsModal, setShowOptionsModal] = useState<boolean>(false);
+  const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
+  const [activeUser, setActiveUser] = useState<User | null>(null);
+  const [optionsPosition, setOptionsPosition] = useState<{ top: number }>({ top: 0});
+  const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
+  const buttonRef = useRef<(HTMLDivElement | null)[]>([]);
+  
+  const toggleOptionsModal = (user: User, index: number) => {
+    if (buttonRef.current[index]) {
+      const rect = buttonRef.current[index]!.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const topPosition = Math.min(rect.bottom + window.scrollY, viewportHeight - 200);
+
+      setOptionsPosition({ top: topPosition });
+    }
+
     setActiveUser(user);
     setShowOptionsModal(!showOptionsModal);
     setShowFilterModal(false);
@@ -47,21 +59,6 @@ export const UsersTable: React.FC = () => {
       localStorage.setItem("selectedUser", JSON.stringify(activeUser));
     }
   };
-
-  useEffect(() => {
-    const targetElement = document.querySelector(".sc-jhZTHU.bpcekY");
-
-    const newSpan = document.createElement("span");
-    newSpan.textContent = "of 500";
-
-    newSpan.style.marginRight = "auto";
-    newSpan.style.display = "inline-block";
-
-    // Insert the new span after the target element
-    if (targetElement) {
-      targetElement.insertAdjacentElement("afterend", newSpan);
-    }
-  }, []);
 
   useEffect(() => {
     axios
@@ -82,15 +79,50 @@ export const UsersTable: React.FC = () => {
             statusOptions[Math.floor(Math.random() * statusOptions.length)],
         }));
         setUsers(usersData);
+        setFilteredUsers(usersData); // Initialize filteredUsers with all users
       })
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
+
+  const handleFilter = (filters: any) => {
+    let updatedUsers = [...users];
+
+    // Apply filters based on the filter values
+    if (filters.organization) {
+      updatedUsers = updatedUsers.filter(user => user.organization.includes(filters.organization));
+    }
+    if (filters.username) {
+      updatedUsers = updatedUsers.filter(user => user.username.toLowerCase().includes(filters.username.toLowerCase()));
+    }
+    if (filters.email) {
+      updatedUsers = updatedUsers.filter(user => user.email.toLowerCase().includes(filters.email.toLowerCase()));
+    }
+    if (filters.phoneNumber) {
+      updatedUsers = updatedUsers.filter(user => user.phoneNumber.includes(filters.phoneNumber));
+    }
+    if (filters.status) {
+      updatedUsers = updatedUsers.filter(user => user.status === filters.status);
+    }
+
+    setFilteredUsers(updatedUsers); // Update filtered users
+  };
+
+  useEffect(() => {
+    if (showOptionsModal || showFilterModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showOptionsModal, showFilterModal]);
 
   const columns = [
     {
       name: "ORGANIZATION",
       selector: (row: User) => row.organization,
-      sortable: false,
+      sortable: true,
     },
     {
       name: "USERNAME",
@@ -115,6 +147,7 @@ export const UsersTable: React.FC = () => {
     {
       name: "STATUS",
       selector: (row: User) => row.status,
+      width: "130px",
       sortable: true,
       cell: (row: User) => (
         <span className={`status ${row.status.toLowerCase()}`}>
@@ -126,12 +159,14 @@ export const UsersTable: React.FC = () => {
       name: "",
       selector: (row: User) => row.status,
       sortable: true,
-      width: "50px",
-      cell: (row: User) => (
-        <BsThreeDotsVertical
-          onClick={() => toggleOptionsModal(row)}
+      width: "10px",
+      cell: (row: User, index: number) => (
+        <div ref={el => buttonRef.current[index] = el}>
+          <BsThreeDotsVertical
+          onClick={() => toggleOptionsModal(row, index)} // Pass index
           className="option-icon"
         />
+        </div>
       ),
     },
   ];
@@ -139,9 +174,8 @@ export const UsersTable: React.FC = () => {
   return (
     <>
       <DataTable
-        // title="Users"
         columns={columns}
-        data={users}
+        data={filteredUsers}
         pagination
         sortIcon={sortIcon}
         selectableRowsComponent={<BiCheckSquare />}
@@ -150,6 +184,7 @@ export const UsersTable: React.FC = () => {
       />
       <OptionsPopup
         show={showOptionsModal}
+        position={optionsPosition}
         onClose={() => setShowOptionsModal(false)}
         openFilterModal={toggleFilterModal}
         onViewDetails={viewUserDetails}
@@ -157,6 +192,7 @@ export const UsersTable: React.FC = () => {
       <FilterPopup
         show={showFilterModal}
         onClose={() => setShowFilterModal(false)}
+        onFilter={handleFilter}
       />
     </>
   );

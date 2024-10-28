@@ -2,29 +2,26 @@
 
 .options-overlay {
   position: fixed;
-  top: 31.25rem;
+  top: 0;
   left: 0;
-  right: 3.75rem;
+  right: 0;
   bottom: 0;
   background-color: transparent;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1000;
 
-  @media screen and (min-width: 100rem) {
-    margin: 0 auto;
-    max-width: 100rem;
-  }
-
   .options-dropdown {
-    position: absolute;
+    // margin-top: 1rem;
+    margin-right: 2.5rem;
     background-color: base.$white;
-    border: 0.0625rem solid base.$bg-gray;
+    border: 1px solid base.$bg-gray;
     box-shadow: 0rem 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
-    z-index: 1000;
     padding: 0.625rem;
+    width: 11.25rem;
+
 
     .option-item {
       padding: 0.625rem;

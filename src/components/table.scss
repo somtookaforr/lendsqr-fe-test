@@ -5,6 +5,13 @@
   border-collapse: collapse;
   margin-top: 1.25rem;
   border: 0.0625rem solid #213f7d0f;
+  box-sizing: border-box;
+  padding: 1.875rem;
+
+  
+  .rdt_TableHeadRow {
+    border-bottom: none !important; 
+  }
 
   .rdt_TableCol_Sortable {
     font-size: 0.75rem;
@@ -14,6 +21,29 @@
     gap: 0.625rem;
     align-items: center;
   }
+
+  .rdt_TableHead .rdt_TableCol svg {
+    opacity: 1;
+    transition: none;
+  }
+
+  .asc.__rdt_custom_sort_icon__ {
+    transform: rotate(180deg);
+    margin-top: -9px;
+  }
+  
+  .desc.__rdt_custom_sort_icon__ {
+    transform: rotate(0deg);
+  }
+
+  .rdt_TableCol:not(.rdt_TableCol--sorted) svg {
+    opacity: 1;
+  }
+
+  // .rdt_TableCol--sorted svg {
+  //   opacity: 1 !important;
+  // }
+
 
   .rdt_TableBody {
     .rdt_TableRow {

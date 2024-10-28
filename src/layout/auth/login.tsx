@@ -15,9 +15,10 @@ const Login: React.FC = () => {
   };
 
   return (
+    <div className="container">        
+    <img src={Logo} alt="Logo" className={"logo"} />
     <div className={"login-container"}>
       <div className={"leftSide"}>
-        <img src={Logo} alt="Logo" className={"logo"} />
         <img src={LoginImg} alt="Illustration" className={"illustration"} />
       </div>
 
@@ -57,6 +58,7 @@ const Login: React.FC = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

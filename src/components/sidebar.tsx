@@ -16,6 +16,7 @@ import {
   FaChartBar,
   FaSlidersH,
   FaSignOutAlt,
+  FaHome
 } from "react-icons/fa";
 import { RiDiscountPercentFill } from "react-icons/ri";
 import { GiCartwheel } from "react-icons/gi";
@@ -38,6 +39,11 @@ const Sidebar: React.FC = () => {
               <FaBriefcase className="icon" />
               <span>Switch Organization</span>
               <FaChevronDown className="icon" size={14} />
+            </li>
+
+            <li className="li dashboard" onClick={(e) => e.preventDefault()}>
+              <FaHome className="icon" />
+              Dashboard
             </li>
 
             <li className="li section-header">CUSTOMERS</li>

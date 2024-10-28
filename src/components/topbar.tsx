@@ -12,22 +12,24 @@ const Topbar: React.FC = () => {
       <div className={"logo"}>
         <img src={Logo} alt="Lendsqr Logo" />
       </div>
-      <div className="search-input">
-        <input
-          type="text"
-          placeholder="Search for anything"
-          className={"searchBar"}
-        />
-        <IoSearchOutline className="search-icon" />
-      </div>
-      <div className={"profileSection"}>
-        <Link to="#">Docs</Link>
-        <FaRegBell className="bell-icon" />
-        <div className={"profile"}>
-          <img src={Avatar} alt="User" />
-          <span className="username">Adedeji</span>
-          <div>
-            <FaSortDown />
+      <div className="topbar-container">
+        <div className="search-input">
+          <input
+            type="text"
+            placeholder="Search for anything"
+            className={"searchBar"}
+          />
+          <IoSearchOutline className="search-icon" />
+        </div>
+        <div className={"profileSection"}>
+          <Link to="#">Docs</Link>
+          <FaRegBell className="bell-icon" />
+          <div className={"profile"}>
+            <img src={Avatar} alt="User" />
+            <span className="username">Adedeji</span>
+            <div>
+              <FaSortDown />
+            </div>
           </div>
         </div>
       </div>

@@ -6,11 +6,13 @@ interface ButtonProps {
   color: "green" | "red" | "gray";
   variant: "outlined" | "filled";
   className?: string;
+  type?: "button" | "submit" | "reset";
+  onClick?: () => void;
 }
 
-const Button = ({ text, color, variant, className }: ButtonProps) => {
+const Button = ({ text, color, variant, className, type, onClick }: ButtonProps) => {
   return (
-    <div className={`button ${className} ${color} ${variant}`}>{text}</div>
+    <button className={`button ${className} ${color} ${variant}`} type={type} onClick={onClick}>{text}</button>
   );
 };
 
