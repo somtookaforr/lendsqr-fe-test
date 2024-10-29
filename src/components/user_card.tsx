@@ -9,37 +9,37 @@ interface cardProps {
   id: number;
   icon: React.ReactNode;
   description: string;
-  count: string;
+  count: string | number;
 }
 
-const card: cardProps[] = [
-  {
-    id: 0,
-    icon: <img src={Users} alt="" />,
-    description: "Users",
-    count: "2453",
-  },
-  {
-    id: 1,
-    icon: <img src={Active} alt="" />,
-    description: "Active Users",
-    count: "2,453",
-  },
-  {
-    id: 2,
-    icon: <img src={Loans} alt="" />,
-    description: "Users with Loans",
-    count: "12,453",
-  },
-  {
-    id: 3,
-    icon: <img src={Savings} alt="" />,
-    description: "Users with Savings",
-    count: "102,453",
-  },
-];
-
-const Card: React.FC = () => {
+const Card: React.FC<{ userCount: number; activeUserCount: number }> = ({ userCount, activeUserCount }) => {
+  const card: cardProps[] = [
+    {
+      id: 0,
+      icon: <img src={Users} alt="" />,
+      description: "Users",
+      count: userCount,
+    },
+    {
+      id: 1,
+      icon: <img src={Active} alt="" />,
+      description: "Active Users",
+      count: activeUserCount,
+    },
+    {
+      id: 2,
+      icon: <img src={Loans} alt="" />,
+      description: "Users with Loans",
+      count: "453",
+    },
+    {
+      id: 3,
+      icon: <img src={Savings} alt="" />,
+      description: "Users with Savings",
+      count: "253",
+    },
+  ];
+  
   return (
     <div className={"user_card"}>
       {card.map((x, key) => (
@@ -68,10 +68,10 @@ const Card: React.FC = () => {
   );
 };
 
-const UserCard: React.FC = () => {
+const UserCard: React.FC<{ userCount: number; activeUserCount: number }> = ({ userCount, activeUserCount }) => {
   return (
     <>
-      <Card />
+      <Card userCount={userCount} activeUserCount={activeUserCount} />
     </>
   );
 };

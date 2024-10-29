@@ -8,6 +8,8 @@ import { UsersTable } from "../../components/table";
 const Users: React.FC = () => {
   const [showFilterModal, setShowFilterModal] = useState(false);
   const toggleFilterModal = () => setShowFilterModal(!showFilterModal);
+  const [userCount, setUserCount] = useState(0);
+  const [activeUserCount, setActiveUserCount] = useState(0);
 
   return (
     <Layout>
@@ -15,13 +17,13 @@ const Users: React.FC = () => {
         <h1 className="text-500">Users</h1>
 
         <div className={"userSummary"}>
-          <UserCard />
+          <UserCard userCount={userCount} activeUserCount={activeUserCount} />
         </div>
 
-        <UsersTable />
+        <UsersTable setUserCount={setUserCount} setActiveUserCount={setActiveUserCount} />
       </div>
 
-      <FilterPopup show={showFilterModal} onClose={toggleFilterModal} />
+      <FilterPopup onFilter={() => null} show={showFilterModal} onClose={toggleFilterModal} />
     </Layout>
   );
 };

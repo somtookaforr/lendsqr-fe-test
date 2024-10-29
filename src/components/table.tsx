@@ -26,7 +26,7 @@ interface User {
   status: string;
 }
 
-export const UsersTable: React.FC = () => {
+export const UsersTable: React.FC<{ setUserCount: (count: number) => void; setActiveUserCount: (count: number) => void; }> = ({ setUserCount, setActiveUserCount }) => {
   const [users, setUsers] = useState<User[]>([]);
   const [showOptionsModal, setShowOptionsModal] = useState<boolean>(false);
   const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
@@ -78,11 +78,15 @@ export const UsersTable: React.FC = () => {
           status:
             statusOptions[Math.floor(Math.random() * statusOptions.length)],
         }));
+        
         setUsers(usersData);
-        setFilteredUsers(usersData); // Initialize filteredUsers with all users
+        setFilteredUsers(usersData);
+
+        setUserCount(usersData.length);
+        setActiveUserCount(usersData.filter(user => user.status === "Active").length);
       })
       .catch((error) => console.error("Error fetching users:", error));
-  }, []);
+  }, [setActiveUserCount, setUserCount]);
 
   const handleFilter = (filters: any) => {
     let updatedUsers = [...users];
