@@ -133,17 +133,23 @@
 }
 
 // For smaller screens
-@media (max-width: 64rem) {
+@media (max-width: 1024px) {
   .sidebar {
     transform: translateX(-100%); // Initially hide sidebar off screen
-  }
 
-  .sidebar.open {
-    transform: translateX(0); // Slide sidebar into view
+    &.open {
+      transform: translateX(0); // Slide sidebar into view
+    }
   }
 
   .hamburger {
     display: block;
+
+    &.open {
+      background-color: white;
+      padding: 0 15rem .625rem 0;
+      display: grid;
+    }
   }
 
   .overlay.active {

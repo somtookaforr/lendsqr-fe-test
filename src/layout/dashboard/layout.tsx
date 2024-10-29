@@ -17,12 +17,14 @@ const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
         hamburger.addEventListener("click", () => {
           console.log("Hamburger clicked");
           sidebar.classList.toggle("open");
+          hamburger.classList.toggle("open");
           overlay.classList.toggle("active");
         });
 
         overlay.addEventListener("click", () => {
           console.log("Overlay clicked");
           sidebar.classList.remove("open");
+          hamburger.classList.remove("open");
           overlay.classList.remove("active");
         });
       } else {
@@ -45,11 +47,13 @@ const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
 
       hamburger?.removeEventListener("click", () => {
         sidebar?.classList.toggle("open");
+        hamburger?.classList.toggle("open");
         overlay?.classList.toggle("active");
       });
 
       overlay?.removeEventListener("click", () => {
         sidebar?.classList.remove("open");
+        hamburger?.classList.remove("open");
         overlay?.classList.remove("active");
       });
 
