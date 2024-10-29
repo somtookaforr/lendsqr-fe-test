@@ -5,6 +5,11 @@
   flex-direction: column;
   gap: 30px; 
 
+  @media screen and (max-width: 768px) {
+    display: grid;
+    flex-direction: unset;
+  }
+
   .navigation-section {
     .back-to-users {
       display: flex;
@@ -68,7 +73,7 @@
           align-items: center;
           grid-template-columns: repeat(3, 1fr);
 
-          @media screen and (max-width: 37.5rem) {
+          @media screen and (max-width: 750px) {
             grid-template-columns: repeat(1, 1fr);
           }
 
@@ -133,7 +138,7 @@
         padding: 0 1.25rem;
         width: auto;
 
-        @media screen and (max-width: 37.5rem) {
+        @media screen and (max-width: 750px) {
           overflow-x: scroll;
         }
 
@@ -180,11 +185,11 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
-      @media screen and (max-width: 64rem) {
+      @media screen and (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr) !important;
       }
 
-      @media screen and (max-width: 31.25rem) {
+      @media screen and (max-width: 500px) {
         grid-template-columns: repeat(1, 1fr) !important;
       }
 
